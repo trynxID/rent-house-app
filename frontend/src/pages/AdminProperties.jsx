@@ -74,6 +74,7 @@ const AdminProperties = () => {
           });
           if (res.status === 200) {
             setProperties(properties.filter((property) => property._id !== id));
+            setCurrentPage(1);
             Swal.fire("Berhasil!", "Data berhasil dihapus.", "success");
           }
         } catch (err) {

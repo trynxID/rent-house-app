@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { Container, Row, Col, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import {
   FaHome,
@@ -61,13 +61,32 @@ const NavbarAndSidebar = () => {
               className="navbar-logo"
             />
           </Navbar.Brand>
+
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse
             id="basic-navbar-nav"
             className="justify-content-end"
           >
             <Nav>
-              <NavDropdown title={userData.fullname} id="basic-nav-dropdown">
+              <NavDropdown
+                title={
+                  <>
+                    <img
+                      src={userData.img_url}
+                      alt="Profile"
+                      width="30"
+                      height="30"
+                      className="rounded-circle"
+                    />{" "}
+                    {userData.fullname}
+                  </>
+                }
+                id="basic-nav-dropdown"
+              >
+                <NavDropdown.Item as={Link} to="/admin/myprofile">
+                  My Profile
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
                 <NavDropdown.Item
                   onClick={handleLogout}
                   className="text-danger"
