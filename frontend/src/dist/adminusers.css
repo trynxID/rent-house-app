@@ -1,0 +1,7 @@
+.users-content {
+    padding: 5px;
+}
+
+.users-content button:hover {
+    background-color: var(--secondary-color);
+}

@@ -1,0 +1,29 @@
+.navbar-logo {
+  width: 100%;
+  height: 30px;
+}
+
+.sidebar {
+  background-color: var(--third-color);
+  color: var(--color-text);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  min-height: 100%;
+  overflow-y: auto;
+}
+
+#sidebarmenu {
+  color: white;
+  padding: 30px;
+}
+
+#sidebarmenu:hover {
+  background-color: var(--secondary-color);
+}
+
+.sidebar-sticky {
+  margin-top: 4rem;
+}

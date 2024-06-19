@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  margin-left: calc(200px + 25px);    
+}
+
+.card-profit {
+  display: flex;
+  justify-content: center;
+}
