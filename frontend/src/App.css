@@ -1,0 +1,218 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+/* ini button logout */
+.logout {
+  margin-right: 10px;
+}
+
+/* ini bagian navbar landingpage */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333; 
+  padding: 10px;
+  z-index: 1000;
+}
+
+.button-navbar {
+  margin-right: 20px;
+}
+
+.button-navbar button{
+  padding: 4px;
+  margin-left: 5px;
+  background-color: greenyellow;
+}
+
+.navbar p {
+  color: white;
+}
+
+.container {
+  margin-top: calc(40px + 20px);
+  /* border: 1px solid black; */
+  background-color: aliceblue;
+}
+
+/* ini bagian login */
+.login-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  border: 1px solid black;
+  margin: auto;
+}
+
+.login-container form {
+  border: 1px solid black;
+  text-align: center;
+  height: 50%;
+  width: 50%;
+}
+
+.login-container .input-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: start;
+  width: 50vh;
+}
+
+.login-container button {
+  padding: 4px;
+  background-color: greenyellow;
+  margin-top: 20px;
+  width: 50vh;
+}
+
+.login-container p {
+  margin-top: 10px;
+}
+
+/* ini bagian registrasi */
+.registrasi-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  border: 1px solid black;
+  margin: auto;
+}
+
+.registrasi-container form {
+  border: 1px solid black;
+  text-align: center;
+  height: 70%;
+  width: 50%;
+}
+
+.registrasi-container .input-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: start;
+  width: 50vh;
+}
+
+.registrasi-container button {
+  padding: 4px;
+  background-color: greenyellow;
+  margin-top: 20px;
+  width: 50vh;
+}
+
+.registrasi-container .button-kembali {
+  margin-top: 10px;
+}
+
+/* ini bagian homepenyewa */
+.navbar-penyewa {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333; 
+  padding: 10px;
+  z-index: 1000;
+  height: 40px;
+}
+
+.navbar-penyewa .fotoprofil {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;  
+  margin-right: 20px;
+}
+
+.navbar-penyewa h3, .navbar-penyewa p {
+  color: white;
+}
+
+.navbar-penyewa p {
+  margin-right: 10px;
+}
+
+.navbar-penyewa .item-navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ini bagian myprofile */
+.container-profile {
+  border: 1px solid black;
+  margin-top: 70px;
+  display: flex;  
+  flex-direction: column;
+}
+
+.container-profile p {
+  color: black;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.container-profile .data-profile {
+  margin-left: auto;
+  margin-right: auto;  
+}
+
+.update-form {
+  margin-top: 10px;
+}
+
+.update-form input, .update-form button {
+  margin-top: 10px;
+}
+
+.input-update {
+  display: flex;  
+  align-items: center;
+}
+
+.input-update label {
+  width: 100px;
+}
+
+/* nyoba */
+
+.search-filter {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filters select {
+  margin-right: 10px;
+}
+
+.property-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.property-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 200px;
+}
