@@ -144,7 +144,7 @@ const AdminBooking = () => {
       <NavbarAndSidebar />
       <Col className="main-content">
         <div className="booking-content">
-          <h1 className="ms-2">Kelola Booking</h1>
+          <h1 className="ms-2">Kelola Pemesanan</h1>
           <Form className="d-flex my-3">
             <Form.Control
               type="search"
@@ -158,9 +158,9 @@ const AdminBooking = () => {
               aria-label="Filter status"
             >
               <option value="all">Semua Status</option>
-              <option value="pending">Pending</option>
-              <option value="success">Success</option>
-              <option value="failed">Failed</option>
+              <option value="pending">Menunggu</option>
+              <option value="success">Sukses</option>
+              <option value="failed">Gagal</option>
             </Form.Select>
           </Form>
           <Table
@@ -172,11 +172,11 @@ const AdminBooking = () => {
           >
             <thead>
               <tr>
-                <th>Nama</th>
-                <th>Judul</th>
-                <th>Durasi kost</th>
-                <th>Total harga</th>
-                <th>Status booking</th>
+                <th>Nama Pemesan</th>
+                <th>Nama Kost</th>
+                <th>Durasi Kost</th>
+                <th>Total Harga</th>
+                <th>Status Pemesanan</th>
                 <th>Aksi</th>
               </tr>
             </thead>

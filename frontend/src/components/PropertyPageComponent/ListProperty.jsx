@@ -203,7 +203,7 @@ const ListProperty = () => {
               <option value="high">Rating tertinggi</option>
               <option value="low">Rating terendah</option>
             </select>
-            <button onClick={handleClearFilters}>Clear</button>
+            <button onClick={handleClearFilters}>Bersihkan</button>
           </div>
           <div className="property-list">
             {currentProperties.map((property) => (

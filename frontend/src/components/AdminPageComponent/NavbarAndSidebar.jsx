@@ -85,14 +85,14 @@ const NavbarAndSidebar = () => {
                 id="basic-nav-dropdown"
               >
                 <NavDropdown.Item as={Link} to="/admin/myprofile">
-                  My Profile
+                  Profil
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item
                   onClick={handleLogout}
                   className="text-danger"
                 >
-                  Logout
+                  Keluar
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
@@ -115,7 +115,7 @@ const NavbarAndSidebar = () => {
                   active={location.pathname === "/admin/dashboard"}
                 >
                   <FaHome className="me-2" />
-                  Dashboard
+                  Dasbor
                 </Nav.Link>
                 <Nav.Link
                   id="sidebarmenu"
@@ -124,7 +124,7 @@ const NavbarAndSidebar = () => {
                   active={location.pathname.startsWith("/admin/properties")}
                 >
                   <FaBuilding className="me-2" />
-                  Property
+                  Properti
                 </Nav.Link>
                 <Nav.Link
                   id="sidebarmenu"
@@ -133,7 +133,7 @@ const NavbarAndSidebar = () => {
                   active={location.pathname.startsWith("/admin/bookings")}
                 >
                   <FaClipboardList className="me-2" />
-                  Booking
+                  Pemesanan
                 </Nav.Link>
                 <Nav.Link
                   id="sidebarmenu"
@@ -152,7 +152,7 @@ const NavbarAndSidebar = () => {
                     active={location.pathname.startsWith("/admin/users")}
                   >
                     <FaUser className="me-2" />
-                    Users
+                    Pengguna
                   </Nav.Link>
                 )}
               </Nav>

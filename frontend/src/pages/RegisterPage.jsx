@@ -44,7 +44,7 @@ const RegisterPage = () => {
   return (
     <div className="register">
       <div className="register_content">
-        <h2>Register</h2>
+        <h2>Pendaftaran</h2>
         {error && <p style={{ color: "red" }}>{error}</p>}
         <form className="register_content_form" onSubmit={handleSubmit}>
           <input

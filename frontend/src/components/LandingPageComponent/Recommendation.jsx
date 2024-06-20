@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Slider from "react-slick";
+import { Container } from "react-bootstrap";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -32,6 +33,19 @@ const Recommendation = () => {
       .catch((error) => {
         console.error("There was an error fetching the cities!", error);
       });
+
+    const handleResize = () => {
+      const slidesToShow = getSlidesToShow();
+      setSettings((prevSettings) => ({
+        ...prevSettings,
+        slidesToShow,
+      }));
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const filteredList = list.filter((val) => {
@@ -91,11 +105,19 @@ const Recommendation = () => {
     );
   };
 
+  const getSlidesToShow = () => {
+    const width = window.innerWidth;
+    if (width <= 480) return 1;
+    if (width <= 768) return 2;
+    if (width <= 850) return 3;
+    return 4;
+  };
+
   const settings = {
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: Math.min(filteredList.length, 4),
+    slidesToShow: getSlidesToShow(),
     slidesToScroll: 1,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
@@ -104,7 +126,7 @@ const Recommendation = () => {
   return (
     <>
       <section className="recommendation" id="recommendation">
-        <div className="container">
+        <Container>
           <h2 className="mb-3 text-center">
             Rekomendasi Kost Disekitar {city}
           </h2>
@@ -142,7 +164,7 @@ const Recommendation = () => {
               );
             })}
           </Slider>
-        </div>
+        </Container>
       </section>
     </>
   );

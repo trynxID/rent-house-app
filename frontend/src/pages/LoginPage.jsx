@@ -49,6 +49,7 @@ const LoginPage = () => {
   return (
     <div className="login">
       <div className="login_content">
+        <h2>Validasi Akun</h2>
         <form className="login_content_form" onSubmit={handleSubmit}>
           <input
             type="email"
@@ -59,12 +60,12 @@ const LoginPage = () => {
           />
           <input
             type="password"
-            placeholder="Password"
+            placeholder="Kata Sandi"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <button type="submit">LOG IN</button>
+          <button type="submit">MASUK</button>
         </form>
         <a href="/register">Belum memiliki akun? Daftar disini!</a>
       </div>

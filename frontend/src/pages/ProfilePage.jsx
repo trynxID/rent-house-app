@@ -93,27 +93,29 @@ const ProfilePage = () => {
                     <Button onClick={handleUpload} variant="success">
                       Upload Foto Profil
                     </Button>
+                    <Button
+                      onClick={() => setIsEditingImage(false)}
+                      variant="danger"
+                    >
+                      Batal
+                    </Button>
                   </div>
-                  <Button
-                    onClick={() => setIsEditingImage(false)}
-                    variant="danger"
-                  >
-                    Batal
-                  </Button>
                 </>
               ) : (
-                <Button
-                  onClick={() => setIsEditingImage(true)}
-                  variant="outline-primary"
-                >
-                  Edit
-                </Button>
+                <div className="profil-img-edit">
+                  <Button
+                    onClick={() => setIsEditingImage(true)}
+                    variant="outline-primary"
+                  >
+                    Edit Foto Profil
+                  </Button>
+                </div>
               )}
             </div>
             <div className="profile-details">
               <Form>
                 <Form.Group controlId="formFullname">
-                  <Form.Label>Fullname</Form.Label>
+                  <Form.Label>Nama</Form.Label>
                   <Form.Control
                     type="text"
                     name="fullname"
@@ -133,7 +135,7 @@ const ProfilePage = () => {
                   />
                 </Form.Group>
                 <Form.Group controlId="formPhone">
-                  <Form.Label>No Phone</Form.Label>
+                  <Form.Label>No. HP</Form.Label>
                   <Form.Control
                     type="text"
                     name="no_phone"
@@ -165,7 +167,7 @@ const ProfilePage = () => {
                     onClick={() => setIsEditingProfile(true)}
                     variant="outline-primary"
                   >
-                    Edit Profile
+                    Edit Data Diri
                   </Button>
                 )}
               </Form>

@@ -59,9 +59,9 @@ const AdminBooking = () => {
             <thead>
               <tr>
                 <th>Nama Pengguna</th>
-                <th>Judul Properti</th>
+                <th>Nama Kost</th>
                 <th>Tanggal Transaksi</th>
-                <th>Profit</th>
+                <th>Pendapatan</th>
                 <th>Status</th>
               </tr>
             </thead>

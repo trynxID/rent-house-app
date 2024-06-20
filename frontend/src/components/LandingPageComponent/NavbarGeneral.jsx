@@ -31,7 +31,7 @@ const NavbarGeneral = () => {
     }
   };
   return (
-    <Navbar expand="lg" sticky="top">
+    <Navbar expand="lg" variant="dark" sticky="top">
       <Container>
         <Navbar.Brand href="/">
           <img src="/logo-brands.png" alt="logo" width="80%" />
@@ -42,7 +42,7 @@ const NavbarGeneral = () => {
         />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto px-auto ">
-            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/">Beranda</Nav.Link>
             <Nav.Link href="/property">Cari Kost</Nav.Link>
             {userData._id ? (
               <>
@@ -62,14 +62,14 @@ const NavbarGeneral = () => {
                   id="basic-nav-dropdown"
                 >
                   <NavDropdown.Item onClick={handleLogout}>
-                    Logout
+                    Keluar
                   </NavDropdown.Item>
                 </NavDropdown>
               </>
             ) : (
               <>
-                <Nav.Link href="/login" className="ms-5 border-login">
-                  Login
+                <Nav.Link href="/login" className="border-login">
+                  Masuk
                 </Nav.Link>
               </>
             )}

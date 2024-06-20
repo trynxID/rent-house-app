@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Col, Card } from "react-bootstrap";
-import {  
+import {
   FaBuilding,
   FaClipboardList,
   FaMoneyBill,
@@ -80,7 +80,7 @@ const DashboardAdmin = () => {
               className="text-center"
               style={{ background: "#1d2636", color: "white" }}
             >
-              Property
+              Properti
             </Card.Header>
             <Card.Body className="d-flex align-items-center justify-content-center">
               <FaBuilding size={50} className="me-3" />
@@ -93,7 +93,7 @@ const DashboardAdmin = () => {
               className="text-center"
               style={{ background: "#1d2636", color: "white" }}
             >
-              Booking
+              Pemesanan
             </Card.Header>
             <Card.Body className="d-flex align-items-center justify-content-center">
               <FaClipboardList size={50} className="me-3" />
@@ -122,7 +122,7 @@ const DashboardAdmin = () => {
                 className="text-center"
                 style={{ background: "#1d2636", color: "white" }}
               >
-                Users
+                Pengguna
               </Card.Header>
               <Card.Body className="d-flex align-items-center justify-content-center">
                 <FaUserCheck size={50} className="me-3" />
@@ -138,7 +138,7 @@ const DashboardAdmin = () => {
               className="text-center"
               style={{ background: "#1d2636", color: "white" }}
             >
-              Profit
+              Pendapatan
             </Card.Header>
             <Card.Body className="d-flex align-items-center justify-content-center">
               <FaHandHoldingDollar size={50} className="me-3" />

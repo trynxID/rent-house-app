@@ -180,3 +180,44 @@
 .pagination button:focus {
   outline: none;
 }
+@media screen and (max-width: 768px) {
+  .search-filter {
+    margin: 0 5px;
+    gap: 10px 19px;
+  }
+  .search-filter input[type="text"] {
+    flex: 1;
+    padding: 10px 200px;
+  }
+  .search-filter button {
+    padding: 10px 55px;
+  }
+  .properties .card {
+    width: 48%;
+  }
+  .card-img img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .search-filter {
+    margin: 0 5px;
+    gap: 10px 25px;
+  }
+  .search-filter input[type="text"] {
+    flex: 1;
+    padding: 10px 15px;
+  }
+  .search-filter option {
+    font-size: 10px;
+  }
+  .search-filter button {
+    padding: 10px 35px;
+  }
+  .properties .card {
+    width: 98%;
+  }
+  .card-img img {
+    width: 100%;
+  }
+}

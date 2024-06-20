@@ -57,7 +57,7 @@
 .detail-property .property-titles {
   margin-bottom: 5px;
   display: flex;
-  gap: 20px !important;
+  gap: 20px;
 }
 
 .detail-property .property-title {
@@ -158,7 +158,7 @@
 }
 
 .floating-form .form-content label {
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 .floating-form .form-content .month-input {
@@ -191,4 +191,74 @@
   border-radius: 5px;
   cursor: pointer;
   font-weight: 600;
+}
+@media screen and (max-width: 768px) {
+  .detail-property .property-rating {
+    padding: 7px 15px;
+  }
+  .detail-property .property-badge {
+    padding: 15px 10px;
+  }
+  .react-datepicker__input-container input {
+    width: 100%;
+    padding: 5px 470px 8px 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    margin-bottom: 5px;
+  }
+  .floating-form {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .property-images.single-image img {
+    width: 100%;
+    max-width: calc(1200px - 90px);
+    height: 300px;
+    object-fit: cover;
+  }
+  .property-images.multiple-images {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .property-images.multiple-images .image-1 {
+    width: 100%;
+    height: 300px;
+    flex-shrink: 0;
+  }
+
+  .property-images.multiple-images .image-2,
+  .property-images.multiple-images .image-3,
+  .property-images.multiple-images .small-images {
+    display: none;
+  }
+
+  .detail-property .property-titles {
+    gap: 10px;
+  }
+
+  .detail-property .property-title {
+    font-size: 25px;
+    font-weight: 500;
+  }
+
+  .detail-property .property-information {
+    background-color: whitesmoke;
+  }
+  .detail-property .property-badge {
+    padding: 40px 10px;
+  }
+  .detail-property .property-stocks {
+    padding: 20px 5px;
+  }
+  .detail-property .property-price {
+    text-align: center;
+  }
+  .floating-form {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+  }
 }

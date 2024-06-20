@@ -68,20 +68,16 @@
   background-color: white;
   color: black;
   cursor: pointer;
-  display: inline-block;
   position: absolute;
   bottom: 20px;
-  left: 45%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
 }
 
 .banner .get-started:hover {
   background-color: var(--secondary-color);
   color: white;
-}
-@media screen and (max-width: 800px) {
-  .banner .container {
-    padding-top: 30%;
-  }
 }
 
 .recommendation {
@@ -89,7 +85,7 @@
   margin-bottom: 30px;
 }
 
-.recommendation .container h2 {
+.recommendation h2 {
   font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
@@ -318,4 +314,92 @@
 
 .kontak-admin-number:hover {
   color: var(--secondary-color);
+}
+
+@media screen and (max-width: 768px) {
+  .banner .container {
+    padding-top: 30%;
+  }
+  .banner h1 {
+    font-size: 45px;
+  }
+
+  .recommendation .container {
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+  }
+  .recommendation .card {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .banner .container {
+    padding-top: 30%;
+  }
+  .banner h1 {
+    font-size: 45px;
+  }
+
+  .recommendation .container {
+    justify-content: center;
+    align-items: center;
+    max-width: 700px;
+  }
+  .recommendation .card {
+    width: 80%;
+    margin-left: 10px;
+  }
+
+  .recommendation .slick-prev {
+    left: -30px;
+  }
+
+  .recommendation .slick-next {
+    right: -20px;
+  }
+  .coverage .box img {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .banner {
+    height: 735px;
+  }
+  .banner .container {
+    padding-top: 30%;
+  }
+  .banner h1 {
+    font-size: 45px;
+  }
+  .banner .get-started {
+    left: 50%;
+    bottom: 10%;
+  }
+  .recommendation .container {
+    justify-content: center;
+    align-items: center;
+    max-width: 380px;
+  }
+  .recommendation .card {
+    width: 80%;
+    margin-left: 10px;
+  }
+  .recommendation .slider-button img {
+    width: 30px;
+    height: 25px;
+  }
+
+  .recommendation .slick-prev {
+    left: -30px;
+  }
+
+  .recommendation .slick-next {
+    right: -20px;
+  }
+  .kontak-admin {
+    width: 390px;
+  }
 }

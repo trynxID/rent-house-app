@@ -149,3 +149,30 @@
   color: white;
   font-weight: 600;
 }
+
+@media screen and (max-width: 480px) {
+  .booking-page .property-item {
+    width: 100%;
+  }
+  .booking-header {
+    gap: 3px;
+  }
+  .booking-header .booking-transaction {
+    display: inline-flex;
+    margin-left: -5px;
+    font-weight: 600;
+    color: var(--secondary-color);
+  }
+  .booking-image {
+    flex: 0 0 120px;
+    padding-top: 5px;
+    margin: -5px;
+  }
+
+  .booking-image img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+}

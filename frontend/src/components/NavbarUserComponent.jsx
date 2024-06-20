@@ -45,7 +45,7 @@ const NavbarUserComponent = () => {
   };
 
   return (
-    <Navbar expand="lg" sticky="top">
+    <Navbar expand="lg" sticky="top" variant="dark">
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img src="/logo-brands.png" alt="logo" width="80%" />
@@ -54,7 +54,7 @@ const NavbarUserComponent = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto px-auto">
             <Nav.Link as={Link} to="/property">
-              Home
+              Beranda
             </Nav.Link>
             {userData._id ? (
               <>
@@ -77,11 +77,11 @@ const NavbarUserComponent = () => {
                   id="basic-nav-dropdown"
                 >
                   <NavDropdown.Item as={Link} to="/myprofile">
-                    My Profile
+                    Profil
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item onClick={handleLogout}>
-                    Logout
+                    Keluar
                   </NavDropdown.Item>
                 </NavDropdown>
               </>

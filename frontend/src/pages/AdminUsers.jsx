@@ -16,7 +16,7 @@ const AdminUsers = () => {
 
   useEffect(() => {
     fetchUsers();
-  }, []);  
+  }, []);
 
   const fetchUsers = async () => {
     try {
@@ -64,7 +64,7 @@ const AdminUsers = () => {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
           });
-          if (res.status === 200) {            
+          if (res.status === 200) {
             setUsers(users.filter((user) => user._id !== id));
             setCurrentPage(1);
             Swal.fire("Berhasil!", "Data berhasil dihapus.", "success");
@@ -103,7 +103,11 @@ const AdminUsers = () => {
         <div className="users-content">
           <h1>Kelola pengguna</h1>
           <div className="users-search">
-            <Button className="tambah me-2" variant="info" onClick={() => navigate("/admin/users/tambahuser")}>
+            <Button
+              className="tambah me-2"
+              variant="info"
+              onClick={() => navigate("/admin/users/tambahuser")}
+            >
               Tambah pengguna
             </Button>
             <Form.Control
@@ -137,7 +141,7 @@ const AdminUsers = () => {
                 <th>Email</th>
                 <th>No Telepon</th>
                 <th>Riwayat aktif</th>
-                <th>Role</th>
+                <th>Level</th>
                 <th>Aksi</th>
               </tr>
             </thead>
