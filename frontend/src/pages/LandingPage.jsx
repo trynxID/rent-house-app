@@ -2,6 +2,7 @@ import NavbarGeneral from "../components/LandingPageComponent/NavbarGeneral";
 import Banner from "../components/LandingPageComponent/Banner";
 import Recommendation from "../components/LandingPageComponent/Recommendation";
 import Coverage from "../components/LandingPageComponent/Coverage";
+import KontakAdmin from "../components/LandingPageComponent/KontakAdmin";
 import "../dist/landingpage.css";
 const LandingPage = () => {
   return (
@@ -10,6 +11,7 @@ const LandingPage = () => {
       <Banner />
       <Recommendation />
       <Coverage />
+      <KontakAdmin />
     </>
   );
 };
