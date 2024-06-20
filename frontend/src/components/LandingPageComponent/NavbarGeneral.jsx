@@ -36,7 +36,10 @@ const NavbarGeneral = () => {
         <Navbar.Brand href="/">
           <img src="/logo-brands.png" alt="logo" width="80%" />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          style={{ borderColor: "#fff" }}
+        />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto px-auto ">
             <Nav.Link href="/">Home</Nav.Link>

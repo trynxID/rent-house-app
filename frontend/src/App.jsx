@@ -92,7 +92,7 @@ function App() {
           }
         />
         <Route
-          path="/admin/edit/:id"
+          path="/admin/properties/editproperti/:id"
           element={
             <ProtectedRoute element={EditProperties} allowedRoles={[2, 3]} />
           }
@@ -117,9 +117,7 @@ function App() {
         />
         <Route
           path="/admin/users/tambahuser"
-          element={
-            <ProtectedRoute element={AddUser} allowedRoles={[2, 3]} />
-          }
+          element={<ProtectedRoute element={AddUser} allowedRoles={[2, 3]} />}
         />
         <Route
           path="/admin/myprofile"
