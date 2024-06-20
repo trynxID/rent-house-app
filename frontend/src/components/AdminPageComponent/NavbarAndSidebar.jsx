@@ -33,6 +33,7 @@ const NavbarAndSidebar = () => {
     try {
       const response = await axios.get(`/api/users/detail/${userId}`);
       setUserData(response.data);
+      localStorage.setItem("userData", JSON.stringify(response.data));
     } catch (error) {
       console.error("Error fetching user data:", error);
     }
