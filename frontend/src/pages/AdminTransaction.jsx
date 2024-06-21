@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Col, Table } from "react-bootstrap";
 import NavbarAndSidebar from "../components/AdminPageComponent/NavbarAndSidebar";
-import "../dist/admintransaction.css";
+import "../layouts/admintransaction.css";
 
 const AdminBooking = () => {
   const [transactions, setTransactions] = useState([]);
@@ -13,11 +13,14 @@ const AdminBooking = () => {
 
   const fetchTransactions = async () => {
     try {
-      const response = await axios.get("/api/transactions", {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      const response = await axios.get(
+        "http://localhost:4573/api/transactions",
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       setTransactions(response.data);
     } catch (err) {
       console.error(err);

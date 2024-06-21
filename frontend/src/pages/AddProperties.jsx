@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import NavbarAndSidebar from "../components/AdminPageComponent/NavbarAndSidebar";
-import "../dist/addproperties.css";
+import "../layouts/addproperties.css";
 
 const AddProperties = () => {
   const navigate = useNavigate();
@@ -56,9 +56,7 @@ const AddProperties = () => {
 
   const handleFileChange = (e) => {
     const files = Array.from(e.target.files);
-    const validFiles = files.filter((file) =>
-      file.type.startsWith("image/")
-    );
+    const validFiles = files.filter((file) => file.type.startsWith("image/"));
 
     if (validFiles.length !== files.length) {
       Swal.fire({
@@ -96,12 +94,15 @@ const AddProperties = () => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Tambahkan",
-      cancelButtonText : "Batal"
+      cancelButtonText: "Batal",
     }).then(async (result) => {
       if (result.isConfirmed) {
         const data = new FormData();
         Object.keys(formData).forEach((key) => {
-          if (typeof formData[key] === "object" && !Array.isArray(formData[key])) {
+          if (
+            typeof formData[key] === "object" &&
+            !Array.isArray(formData[key])
+          ) {
             Object.keys(formData[key]).forEach((subKey) => {
               data.append(`${key}.${subKey}`, formData[key][subKey]);
             });
@@ -115,7 +116,7 @@ const AddProperties = () => {
         });
 
         try {
-          await axios.post("/api/properties/add", data, {
+          await axios.post("http://localhost:4573/api/properties/add", data, {
             headers: {
               "Content-Type": "multipart/form-data",
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -140,7 +141,7 @@ const AddProperties = () => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Ya",
-      cancelButtonText : "Tidak"
+      cancelButtonText: "Tidak",
     }).then((result) => {
       if (result.isConfirmed) {
         navigate("/admin/properties");

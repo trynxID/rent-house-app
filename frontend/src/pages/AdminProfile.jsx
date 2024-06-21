@@ -25,7 +25,7 @@ const AdminProfile = () => {
 
     try {
       const res = await axios.post(
-        `/api/users/upload/${userData._id}`,
+        `http://localhost:4573/api/users/upload/${userData._id}`,
         formData,
         {
           headers: {
@@ -58,12 +58,16 @@ const AdminProfile = () => {
 
   const handleSaveProfile = async () => {
     try {
-      await axios.put(`/api/users/update/${userData._id}`, userData, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      await axios.put(
+        `http://localhost:4573/api/users/update/${userData._id}`,
+        userData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       localStorage.setItem("userData", JSON.stringify(userData));
       Swal.fire("Berhasil!", "Profil berhasil diperbarui", "success");
       setIsEditingProfile(false);
@@ -164,7 +168,7 @@ const AdminProfile = () => {
                 ) : (
                   <Button
                     onClick={() => setIsEditingProfile(true)}
-                    variant="outline-primary"                    
+                    variant="outline-primary"
                   >
                     Edit Profile
                   </Button>

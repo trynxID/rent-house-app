@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import axios from "axios";
 import NavbarUserComponent from "../components/NavbarUserComponent";
-import "../dist/profile.css";
+import "../layouts/profile.css";
 
 const ProfilePage = () => {
   const [userData, setUserData] = useState({});
@@ -25,7 +25,7 @@ const ProfilePage = () => {
 
     try {
       const res = await axios.post(
-        `/api/users/upload/${userData._id}`,
+        `http://localhost:4573/api/users/upload/${userData._id}`,
         formData,
         {
           headers: {
@@ -58,12 +58,16 @@ const ProfilePage = () => {
 
   const handleSaveProfile = async () => {
     try {
-      await axios.put(`/api/users/update/${userData._id}`, userData, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      await axios.put(
+        `http://localhost:4573/api/users/update/${userData._id}`,
+        userData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       localStorage.setItem("userData", JSON.stringify(userData));
       setIsEditingProfile(false);
       window.location.reload();
@@ -81,7 +85,11 @@ const ProfilePage = () => {
             <div className="profile-image-section">
               <div className="profile-image">
                 {userData.img_url ? (
-                  <img src={userData.img_url} alt="Profile" width="300" />
+                  <img
+                    src={`http://localhost:4573${userData.img_url}`}
+                    alt="Profile"
+                    width="300"
+                  />
                 ) : (
                   "Belum ada foto"
                 )}

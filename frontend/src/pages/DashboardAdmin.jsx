@@ -9,7 +9,7 @@ import {
 import { FaHandHoldingDollar } from "react-icons/fa6";
 import axios from "axios";
 import NavbarAndSidebar from "../components/AdminPageComponent/NavbarAndSidebar";
-import "../dist/dashboardadmin.css";
+import "../layouts/dashboardadmin.css";
 
 const DashboardAdmin = () => {
   const [userData, setUserData] = useState({});
@@ -29,7 +29,9 @@ const DashboardAdmin = () => {
 
   const fetchUserData = async (userId) => {
     try {
-      const response = await axios.get(`/api/users/detail/${userId}`);
+      const response = await axios.get(
+        `http://localhost:4573/api/users/detail/${userId}`
+      );
       setUserData(response.data);
     } catch (error) {
       console.error("Error fetching user data:", error);
@@ -47,11 +49,14 @@ const DashboardAdmin = () => {
   useEffect(() => {
     const fetchCount = async () => {
       try {
-        const response = await axios.get("/api/dashboard/total", {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        });
+        const response = await axios.get(
+          "http://localhost:4573/api/dashboard/total",
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
         setCount(response.data);
       } catch (error) {
         console.error("Error fetching count:", error);

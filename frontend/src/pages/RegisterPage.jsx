@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import "../dist/register.css";
+import "../layouts/register.css";
 
 const RegisterPage = () => {
   const [formData, setFormData] = useState({
@@ -22,7 +22,10 @@ const RegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/register/save", formData);
+      const response = await axios.post(
+        "http://localhost:4573/api/register/save",
+        formData
+      );
       Swal.fire({
         title: "Pendaftaran Berhasil",
         icon: "success",

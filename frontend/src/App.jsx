@@ -24,7 +24,7 @@ import AdminTransaction from "./pages/AdminTransaction";
 import AdminUsers from "./pages/AdminUsers";
 import AddUser from "./pages/AddUser";
 import AdminProfile from "./pages/AdminProfile";
-import "./App.css";
+import "../src/layouts/App.css";
 
 function App() {
   return (

@@ -22,7 +22,9 @@ const NavbarProperty = () => {
 
   const fetchUserData = async (userId) => {
     try {
-      const response = await axios.get(`/api/users/detail/${userId}`);
+      const response = await axios.get(
+        `http://localhost:4573/api/users/detail/${userId}`
+      );
       const user = response.data;
       setUserData(user);
       setProfileImage(user.img_url);
@@ -33,7 +35,7 @@ const NavbarProperty = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.put(`/api/users/logout/${userData._id}`);
+      await axios.put(`http://localhost:4573/api/users/logout/${userData._id}`);
       localStorage.removeItem("token");
       localStorage.removeItem("user");
       navigate("/");
@@ -63,7 +65,7 @@ const NavbarProperty = () => {
                   title={
                     <>
                       <img
-                        src={profileImage}
+                        src={`http://localhost:4573${profileImage}`}
                         alt="Profile"
                         width="30"
                         height="30"

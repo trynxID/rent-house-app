@@ -1,6 +1,6 @@
 import NavbarUserComponent from "../components/NavbarUserComponent";
 import ListProperty from "../components/PropertyPageComponent/ListProperty";
-import "../dist/property.css";
+import "../layouts/property.css";
 
 const PropertyPage = () => {
   return (

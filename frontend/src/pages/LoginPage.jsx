@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
-import "../dist/login.css";
+import "../layouts/login.css";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -13,7 +13,10 @@ const LoginPage = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("api/login/auth", { email, password });
+      const response = await axios.post(
+        "http://localhost:4573/api/login/auth",
+        { email, password }
+      );
       const userData = response.data;
       localStorage.setItem("user", JSON.stringify(userData.user));
       localStorage.setItem("token", userData.token);

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import NavbarAndSidebar from "../components/AdminPageComponent/NavbarAndSidebar";
 import { Col, Table, Button, Pagination, Form } from "react-bootstrap";
 import Swal from "sweetalert2";
-import "../dist/adminusers.css";
+import "../layouts/adminusers.css";
 
 const AdminUsers = () => {
   const [users, setUsers] = useState([]);
@@ -20,7 +20,7 @@ const AdminUsers = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get("/api/users");
+      const response = await axios.get("http://localhost:4573/api/users");
       setUsers(response.data);
     } catch (err) {
       console.error(err);
@@ -59,11 +59,14 @@ const AdminUsers = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const res = await axios.delete(`/api/users/delete/${id}`, {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          });
+          const res = await axios.delete(
+            `http://localhost:4573/api/users/delete/${id}`,
+            {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+              },
+            }
+          );
           if (res.status === 200) {
             setUsers(users.filter((user) => user._id !== id));
             setCurrentPage(1);

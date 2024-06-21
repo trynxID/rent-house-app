@@ -1,0 +1,27 @@
+.users-content {
+    padding: 5px;
+}
+
+.users-content button:hover {
+    background-color: var(--secondary-color);
+}
+
+.users-content .users-search .tambah {
+    padding-left: 1px;
+    padding-right: 1px;
+    width: 11rem;
+}
+
+
+.users-content .users-search {
+    display: flex;
+    align-items: center;    
+}
+
+.users-content .users-search .search {
+    width: 20rem;
+}
+
+.users-content .users-search .role {
+    width: 20rem;
+}

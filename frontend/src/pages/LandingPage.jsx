@@ -3,7 +3,7 @@ import Banner from "../components/LandingPageComponent/Banner";
 import Recommendation from "../components/LandingPageComponent/Recommendation";
 import Coverage from "../components/LandingPageComponent/Coverage";
 import KontakAdmin from "../components/LandingPageComponent/KontakAdmin";
-import "../dist/landingpage.css";
+import "../layouts/landingpage.css";
 const LandingPage = () => {
   return (
     <>

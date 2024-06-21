@@ -1,0 +1,223 @@
+.properties {
+  margin-top: 20px;
+}
+.search-filter {
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.search-filter input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.search-filter select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.search-filter button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--secondary-color);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-filter button:hover {
+  font-weight: 600;
+  border: 2px solid;
+  border-color: var(--secondary-color);
+  background-color: var(--third-color);
+}
+
+.property-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  padding: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.card {
+  width: 23%;
+  margin: 10px 1%;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  border-color: var(--secondary-color);
+}
+
+.card-img {
+  position: relative;
+  width: 500px;
+  height: 180px;
+  overflow: hidden;
+}
+
+.card-img img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.rating {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--secondary-color);
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-category {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.badge {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.card-stocks {
+  font-size: 12px;
+  font-weight: 400;
+  color: red;
+  margin-left: auto;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+.card-location {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 5px 0;
+}
+
+.card-details {
+  font-size: 12px;
+  font-weight: 400;
+  color: #888;
+  margin: 5px 0;
+  overflow-y: hidden;
+}
+
+.card-price {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.pagination button {
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  padding: 8px 16px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination button:hover {
+  background-color: #ccc;
+}
+
+.pagination button.active {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.pagination button:focus {
+  outline: none;
+}
+@media screen and (max-width: 768px) {
+  .search-filter {
+    margin: 0 5px;
+    gap: 10px 19px;
+  }
+  .search-filter input[type="text"] {
+    flex: 1;
+    padding: 10px 200px;
+  }
+  .search-filter button {
+    padding: 10px 55px;
+  }
+  .properties .card {
+    width: 48%;
+  }
+  .card-img img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .search-filter {
+    margin: 0 5px;
+    gap: 10px 25px;
+  }
+  .search-filter input[type="text"] {
+    flex: 1;
+    padding: 10px 15px;
+  }
+  .search-filter option {
+    font-size: 10px;
+  }
+  .search-filter button {
+    padding: 10px 35px;
+  }
+  .properties .card {
+    width: 98%;
+  }
+  .card-img img {
+    width: 100%;
+  }
+}

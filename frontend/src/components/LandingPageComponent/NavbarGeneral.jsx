@@ -21,7 +21,7 @@ const NavbarGeneral = () => {
   }, []);
   const handleLogout = async () => {
     try {
-      await axios.put(`/api/users/logout/${userData._id}`);
+      await axios.put(`http://localhost:4573/api/users/logout/${userData._id}`);
       localStorage.removeItem("token");
       localStorage.removeItem("user");
       localStorage.removeItem("userData");
@@ -50,7 +50,7 @@ const NavbarGeneral = () => {
                   title={
                     <>
                       <img
-                        src={profileImage}
+                        src={`http://localhost:4573${profileImage}`}
                         alt="Profile"
                         width="30"
                         height="30"

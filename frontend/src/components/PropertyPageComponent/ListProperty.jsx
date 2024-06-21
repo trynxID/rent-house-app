@@ -21,7 +21,7 @@ const ListProperty = () => {
 
   const fetchProperties = async () => {
     try {
-      const response = await axios.get("/api/properties");
+      const response = await axios.get("http://localhost:4573/api/properties");
       const availableProperties = response.data.filter(
         (property) => property.status === "Tersedia"
       );
@@ -213,7 +213,10 @@ const ListProperty = () => {
                 onClick={() => handleCardClick(property._id)}
               >
                 <div className="card-img">
-                  <img src={property.images[0]} alt={property.title} />
+                  <img
+                    src={`http://localhost:4573${property.images[0]}`}
+                    alt={property.title}
+                  />
                   <div className="rating">★ {property.rating}</div>
                 </div>
                 <div className="card-body">

@@ -5,7 +5,7 @@ import NavbarUserComponent from "../components/NavbarUserComponent";
 import { Container, Accordion } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
-import "../dist/bookingpage.css";
+import "../layouts/bookingpage.css";
 
 const BookingPage = () => {
   const [bookings, setBookings] = useState([]);
@@ -13,11 +13,14 @@ const BookingPage = () => {
   useEffect(() => {
     const fetchBookings = async () => {
       try {
-        const response = await axios.get("/api/bookings/user", {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        });
+        const response = await axios.get(
+          "http://localhost:4573/api/bookings/user",
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
         setBookings(response.data);
       } catch (err) {
         console.error(err);
@@ -40,11 +43,14 @@ const BookingPage = () => {
 
     if (result.isConfirmed) {
       try {
-        const res = await axios.delete(`/api/bookings/delete/${id}`, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        });
+        const res = await axios.delete(
+          `http://localhost:4573/api/bookings/delete/${id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
         if (res.status === 200) {
           setBookings(bookings.filter((booking) => booking._id !== id));
           Swal.fire("Dihapus!", "Booking berhasil dihapus.", "success");

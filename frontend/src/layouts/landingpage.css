@@ -1,0 +1,405 @@
+.navbar {
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 0 10px 0;
+  background-color: var(--third-color) !important;
+  z-index: 1000;
+}
+
+.navbar .nav-link {
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 5px;
+  padding: 5px 10px 5px 10px !important;
+  margin-left: 20px;
+  color: white !important;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.navbar .border-login {
+  border: 2px solid green;
+  border-radius: 5px;
+}
+
+.navbar .nav-link:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color) !important;
+  border-radius: 0.25rem;
+}
+
+.navbar .nav-link.active {
+  background-color: var(--active-bg-color);
+  color: var(--active-color);
+}
+
+/* Styling untuk banner */
+.banner {
+  background-image: url("/banner.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.banner .container {
+  padding-top: 15%;
+}
+.banner h1 {
+  color: #fff;
+  font-size: 60px;
+  text-align: center;
+}
+.banner p {
+  color: #fff;
+  text-align: center;
+  opacity: 0.8;
+}
+.banner .get-started {
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  width: fit-content;
+  border-radius: 25px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+
+.banner .get-started:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.recommendation {
+  padding-top: 20px;
+  margin-bottom: 30px;
+}
+
+.recommendation h2 {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.recommendation .card {
+  margin: 20px 15px 0px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+}
+
+.recommendation .card:hover {
+  transform: scale(1.02);
+  border-color: var(--secondary-color);
+}
+
+.recommendation .card-img {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.recommendation .card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.recommendation .rating {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--secondary-color);
+}
+
+.recommendation .card-body {
+  padding: 15px;
+}
+
+.recommendation .card-category {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.recommendation .badge {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.recommendation .card-stocks {
+  font-size: 12px;
+  font-weight: 400;
+  color: red;
+  margin-left: auto;
+}
+
+.recommendation .card-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+.recommendation .card-location {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 5px 0;
+}
+
+.recommendation .card-details {
+  font-size: 12px;
+  font-weight: 400;
+  color: #888;
+  margin: 5px 0;
+  overflow-y: hidden;
+}
+
+.recommendation .card-price {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+.recommendation .slider-button {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+.recommendation .slider-button img {
+  width: 30px;
+  height: 30px;
+}
+
+.recommendation .slick-prev {
+  left: -40px;
+}
+
+.recommendation .slick-next {
+  right: -40px;
+}
+
+.slick-arrow::before {
+  display: none;
+}
+
+.recommendation .slick-slide {
+  padding-right: 20px;
+}
+
+.coverage {
+  padding-top: 20px;
+}
+
+.coverage h2 {
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.coverage .box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.coverage .box img {
+  width: 100%;
+  height: 250px;
+  display: block;
+  object-fit: fill;
+}
+
+.coverage .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.coverage .overlay h5 {
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.coverage .box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.coverage .box:hover h5 {
+  text-decoration: underline;
+}
+
+.kontak-admin {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  max-width: 600px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.kontak-admin-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.kontak-admin-text {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.kontak-admin-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kontak-admin-icon {
+  margin-right: 10px;
+  color: #25d366;
+  font-size: 24px;
+}
+
+.kontak-admin-link {
+  text-decoration: none;
+}
+
+.kontak-admin-number {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.kontak-admin-number:hover {
+  color: var(--secondary-color);
+}
+
+@media screen and (max-width: 768px) {
+  .banner .container {
+    padding-top: 30%;
+  }
+  .banner h1 {
+    font-size: 45px;
+  }
+
+  .recommendation .container {
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+  }
+  .recommendation .card {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .banner .container {
+    padding-top: 30%;
+  }
+  .banner h1 {
+    font-size: 45px;
+  }
+
+  .recommendation .container {
+    justify-content: center;
+    align-items: center;
+    max-width: 700px;
+  }
+  .recommendation .card {
+    width: 80%;
+    margin-left: 10px;
+  }
+
+  .recommendation .slick-prev {
+    left: -30px;
+  }
+
+  .recommendation .slick-next {
+    right: -20px;
+  }
+  .coverage .box img {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .banner {
+    height: 735px;
+  }
+  .banner .container {
+    padding-top: 30%;
+  }
+  .banner h1 {
+    font-size: 45px;
+  }
+  .banner .get-started {
+    left: 50%;
+    bottom: 10%;
+  }
+  .recommendation .container {
+    justify-content: center;
+    align-items: center;
+    max-width: 380px;
+  }
+  .recommendation .card {
+    width: 80%;
+    margin-left: 10px;
+  }
+  .recommendation .slider-button img {
+    width: 30px;
+    height: 25px;
+  }
+
+  .recommendation .slick-prev {
+    left: -30px;
+  }
+
+  .recommendation .slick-next {
+    right: -20px;
+  }
+  .kontak-admin {
+    width: 390px;
+  }
+}

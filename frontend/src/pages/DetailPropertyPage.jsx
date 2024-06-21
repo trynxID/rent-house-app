@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
 import "react-datepicker/dist/react-datepicker.css";
-import "../dist/detailproperty.css";
+import "../layouts/detailproperty.css";
 
 const DetailPropertyPage = () => {
   const { id } = useParams();
@@ -20,11 +20,14 @@ const DetailPropertyPage = () => {
   useEffect(() => {
     const fetchProperty = async () => {
       try {
-        const response = await axios.get(`/api/properties/detail/${id}`, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        });
+        const response = await axios.get(
+          `http://localhost:4573/api/properties/detail/${id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
         setProperty(response.data);
       } catch (error) {
         console.error("Error fetching property details:", error);
@@ -50,7 +53,7 @@ const DetailPropertyPage = () => {
     const userId = user.id;
     try {
       const response = await axios.post(
-        `/api/bookings/add`,
+        `http://localhost:4573/api/bookings/add`,
         {
           propertyId: id,
           start_date: startDate,

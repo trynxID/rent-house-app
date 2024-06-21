@@ -31,7 +31,9 @@ const NavbarAndSidebar = () => {
 
   const fetchUserData = async (userId) => {
     try {
-      const response = await axios.get(`/api/users/detail/${userId}`);
+      const response = await axios.get(
+        `http://localhost:4573/api/users/detail/${userId}`
+      );
       setUserData(response.data);
       localStorage.setItem("userData", JSON.stringify(response.data));
     } catch (error) {
@@ -41,7 +43,7 @@ const NavbarAndSidebar = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.put(`/api/users/logout/${userData._id}`);
+      await axios.put(`http://localhost:4573/api/users/logout/${userData._id}`);
       localStorage.removeItem("token");
       localStorage.removeItem("user");
       localStorage.removeItem("userData");
@@ -73,7 +75,7 @@ const NavbarAndSidebar = () => {
                 title={
                   <>
                     <img
-                      src={userData.img_url}
+                      src={`http://localhost:4573${userData.img_url}`}
                       alt="Profile"
                       width="30"
                       height="30"

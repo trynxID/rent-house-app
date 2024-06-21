@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Col, Button, Table, Pagination, Form } from "react-bootstrap";
 import NavbarAndSidebar from "../components/AdminPageComponent/NavbarAndSidebar";
 import Swal from "sweetalert2";
-import "../dist/adminbooking.css";
+import "../layouts/adminbooking.css";
 
 const AdminBooking = () => {
   const [bookings, setBookings] = useState([]);
@@ -28,7 +28,7 @@ const AdminBooking = () => {
 
   const fetchBookings = async () => {
     try {
-      const response = await axios.get("/api/bookings", {
+      const response = await axios.get("http://localhost:4573/api/bookings", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -78,7 +78,7 @@ const AdminBooking = () => {
       if (result.isConfirmed) {
         try {
           await axios.put(
-            `/api/bookings/cancel/${bookingId}`,
+            `http://localhost:4573/api/bookings/cancel/${bookingId}`,
             {},
             {
               headers: {
@@ -103,7 +103,7 @@ const AdminBooking = () => {
   const handleAcceptBooking = async (bookingId) => {
     try {
       const response = await axios.post(
-        `/api/transactions/accept/${bookingId}`,
+        `http://localhost:4573/api/transactions/accept/${bookingId}`,
         {},
         {
           headers: {

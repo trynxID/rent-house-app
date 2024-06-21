@@ -13,7 +13,7 @@ const Recommendation = () => {
 
   useEffect(() => {
     axios
-      .get("/api/properties")
+      .get("http://localhost:4573/api/properties")
       .then((response) => {
         setList(response.data);
       })
@@ -22,7 +22,7 @@ const Recommendation = () => {
       });
 
     axios
-      .get("/api/properties/cities")
+      .get("http://localhost:4573/api/properties/cities")
       .then((response) => {
         const cities = response.data;
         if (cities.length > 0) {
@@ -147,7 +147,10 @@ const Recommendation = () => {
               return (
                 <div key={index} className="card" onClick={handleCardClick}>
                   <div className="card-img">
-                    <img src={images[0]} alt={title} />
+                    <img
+                      src={`http://localhost:4573${images[0]}`}
+                      alt={title}
+                    />
                     <div className="rating">★ {rating}</div>
                   </div>
                   <div className="card-body">

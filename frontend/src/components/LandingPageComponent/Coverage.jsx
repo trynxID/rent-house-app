@@ -8,7 +8,7 @@ const Coverage = () => {
 
   useEffect(() => {
     axios
-      .get("/api/properties")
+      .get("http://localhost:4573/api/properties")
       .then((response) => {
         const data = response.data;
 

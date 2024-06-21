@@ -1,0 +1,264 @@
+/* Detail Property Page Styles */
+
+.detail-property {
+  padding: 20px 0;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.property-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.property-images {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.property-images.single-image img {
+  width: 100%;
+  max-width: calc(1200px - 90px);
+  height: 400px;
+  object-fit: cover;
+}
+
+.property-images.multiple-images {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.property-images.multiple-images .image-1 {
+  width: 65%;
+  height: 400px;
+  flex-shrink: 0;
+}
+
+.property-images.multiple-images .image-2,
+.property-images.multiple-images .image-3 {
+  width: 375px;
+  height: 195px;
+  object-fit: cover;
+}
+
+.property-images.multiple-images .small-images {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.property-images img {
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.detail-property .property-titles {
+  margin-bottom: 5px;
+  display: flex;
+  gap: 20px;
+}
+
+.detail-property .property-title {
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.detail-property .property-rating {
+  color: black;
+  padding: 2px 15px;
+  font-size: 24px;
+  font-weight: 400;
+  align-items: center;
+}
+
+.detail-property .property-rating .fa-star {
+  color: var(--secondary-color);
+  font-size: 30px;
+}
+
+.detail-property .property-information {
+  display: flex;
+  gap: 10px;
+}
+
+.detail-property .property-badge {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 600;
+  align-items: center;
+}
+
+.detail-property .property-location {
+  color: black;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 16px;
+  align-items: center;
+}
+
+.detail-property .property-location .fa-location-dot {
+  margin-right: 5px;
+}
+
+.detail-property .property-stocks {
+  color: red;
+  padding: 5px 5px;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 500;
+  align-items: center;
+}
+
+.detail-property .property-price {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 10px 0 20px 0px;
+}
+
+.detail-property .accordion-button {
+  background-color: var(--third-color);
+  color: white;
+}
+
+.detail-property .accordion-button:not(.collapsed) {
+  background-color: var(--secondary-color);
+  color: white;
+  font-weight: 600;
+}
+
+.detail-property .accordion-button:focus {
+  box-shadow: none;
+}
+
+.detail-property .accordion-body {
+  background-color: #fff;
+  color: #333;
+}
+
+.floating-form {
+  position: absolute;
+  top: 440px;
+  right: 120px;
+  width: 380px;
+  background: white;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.floating-form .form-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.floating-form .form-content label {
+  margin-bottom: 15px;
+}
+
+.floating-form .form-content .month-input {
+  margin-bottom: 15px;
+}
+
+.react-datepicker__input-container input {
+  width: 100%;
+  padding: 8px 130px 8px 8px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+.detail-property h4 {
+  text-align: center;
+}
+
+.month-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.rent-button {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+@media screen and (max-width: 768px) {
+  .detail-property .property-rating {
+    padding: 7px 15px;
+  }
+  .detail-property .property-badge {
+    padding: 15px 10px;
+  }
+  .react-datepicker__input-container input {
+    width: 100%;
+    padding: 5px 470px 8px 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    margin-bottom: 5px;
+  }
+  .floating-form {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .property-images.single-image img {
+    width: 100%;
+    max-width: calc(1200px - 90px);
+    height: 300px;
+    object-fit: cover;
+  }
+  .property-images.multiple-images {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .property-images.multiple-images .image-1 {
+    width: 100%;
+    height: 300px;
+    flex-shrink: 0;
+  }
+
+  .property-images.multiple-images .image-2,
+  .property-images.multiple-images .image-3,
+  .property-images.multiple-images .small-images {
+    display: none;
+  }
+
+  .detail-property .property-titles {
+    gap: 10px;
+  }
+
+  .detail-property .property-title {
+    font-size: 25px;
+    font-weight: 500;
+  }
+
+  .detail-property .property-information {
+    background-color: whitesmoke;
+  }
+  .detail-property .property-badge {
+    padding: 40px 10px;
+  }
+  .detail-property .property-stocks {
+    padding: 20px 5px;
+  }
+  .detail-property .property-price {
+    text-align: center;
+  }
+  .floating-form {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+  }
+}

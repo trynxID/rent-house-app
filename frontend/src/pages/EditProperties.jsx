@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import NavbarAndSidebar from "../components/AdminPageComponent/NavbarAndSidebar";
-import "../dist/addproperties.css";
+import "../layouts/addproperties.css";
 
 const EditProperties = () => {
   const { id } = useParams();
@@ -21,7 +21,7 @@ const EditProperties = () => {
       district: "",
       city: "",
       province: "",
-      country: ""
+      country: "",
     },
     occupant: "",
     details: {
@@ -30,20 +30,23 @@ const EditProperties = () => {
       furnished: false,
       wifi: false,
       ac: false,
-      kitchen: false
+      kitchen: false,
     },
     stocks: 0,
-    rating: 0
+    rating: 0,
   });
 
   useEffect(() => {
     const fetchProperty = async () => {
       try {
-        const res = await axios.get(`/api/properties/edit/${id}`, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`
+        const res = await axios.get(
+          `http://localhost:4573/api/properties/edit/${id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
           }
-        });
+        );
         setProperty(res.data);
         setOriginalProperty(res.data);
       } catch (err) {
@@ -63,13 +66,13 @@ const EditProperties = () => {
         ...prevState,
         [parent]: {
           ...prevState[parent],
-          [child]: type === "checkbox" ? checked : value
-        }
+          [child]: type === "checkbox" ? checked : value,
+        },
       }));
     } else {
       setProperty({
         ...property,
-        [name]: type === "checkbox" ? checked : value
+        [name]: type === "checkbox" ? checked : value,
       });
     }
   };
@@ -97,22 +100,34 @@ const EditProperties = () => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Ubah",
-      cancelButtonText: "Tidak"
+      cancelButtonText: "Tidak",
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const res = await axios.put(`/api/properties/update/${id}`, property, {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`
+          const res = await axios.put(
+            `http://localhost:4573/api/properties/update/${id}`,
+            property,
+            {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+              },
             }
-          });
+          );
           if (res.status === 200) {
-            Swal.fire("Berhasil!", "Data properti berhasil diperbarui.", "success");
+            Swal.fire(
+              "Berhasil!",
+              "Data properti berhasil diperbarui.",
+              "success"
+            );
             navigate("/admin/properties");
           }
         } catch (err) {
           console.error(err);
-          Swal.fire("Gagal!", "Terjadi kesalahan saat memperbarui data.", "error");
+          Swal.fire(
+            "Gagal!",
+            "Terjadi kesalahan saat memperbarui data.",
+            "error"
+          );
         }
       }
     });
@@ -127,7 +142,7 @@ const EditProperties = () => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Ya",
-      cancelButtonText: "Tidak"
+      cancelButtonText: "Tidak",
     }).then((result) => {
       if (result.isConfirmed) {
         navigate("/admin/properties");

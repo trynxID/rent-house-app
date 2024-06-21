@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Col, Button, Table, Pagination, Form } from "react-bootstrap";
 import NavbarAndSidebar from "../components/AdminPageComponent/NavbarAndSidebar";
 import Swal from "sweetalert2";
-import "../dist/adminproperties.css";
+import "../layouts/adminproperties.css";
 
 const AdminProperties = () => {
   const [userData, setUserData] = useState({});
@@ -31,7 +31,7 @@ const AdminProperties = () => {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const res = await axios.get("/api/properties", {
+        const res = await axios.get("http://localhost:4573/api/properties", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -47,7 +47,9 @@ const AdminProperties = () => {
 
   const fetchUserData = async (userId) => {
     try {
-      const response = await axios.get(`/api/users/detail/${userId}`);
+      const response = await axios.get(
+        `http://localhost:4573/api/users/detail/${userId}`
+      );
       setUserData(response.data);
     } catch (error) {
       console.error("Error fetching user data:", error);
@@ -67,11 +69,14 @@ const AdminProperties = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const res = await axios.delete(`/api/properties/delete/${id}`, {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          });
+          const res = await axios.delete(
+            `http://localhost:4573/api/properties/delete/${id}`,
+            {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+              },
+            }
+          );
           if (res.status === 200) {
             setProperties(properties.filter((property) => property._id !== id));
             setCurrentPage(1);
